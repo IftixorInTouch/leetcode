@@ -7,6 +7,7 @@ class ListNode:
         self.next = next
 
 
+# not valid solution
 class Solution1:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         lst = []
