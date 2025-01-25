@@ -9,6 +9,7 @@ class Solution:
             idx = 0
             for num in b[idx:]:
                 if a[i] * num > maximum_num:
+                    pass
 
 
 a = Solution()
