@@ -1,2 +1,5 @@
-nums = [1, 2, 3, 4, 5]
-print(nums[4:6])
+string = "123+-21i"
+
+num1 = string.split("+")
+print(num1)
+print(int(num1[1][:-1]))
