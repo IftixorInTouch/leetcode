@@ -1,1 +1,0 @@
-print(10 in range(1, 10))
