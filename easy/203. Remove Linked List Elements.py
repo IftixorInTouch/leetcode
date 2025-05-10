@@ -24,7 +24,20 @@ class Solution:
         return head
 
 
-a = Solution()
+class Solution2:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        dummy = ListNode(-1, head)
+
+        current = dummy
+        while current.next:
+            if current.next.val == val:
+                current.next = current.next.next
+            else:
+                current = current.next
+        return dummy.next
+
+
+a = Solution2()
 b = ListNode(1)
 b.next = ListNode(6)
 b.next.next = ListNode(2)
