@@ -3,6 +3,8 @@ from typing import List
 
 class Solution:
     """
+    Not optimal
+    Bruteforce solution
     Time Complexity: O(2^n)
     Memory limit exceeded
     """
@@ -47,7 +49,22 @@ class Solution:
         return mask
 
 
-a = Solution()
+class Solution2:
+    def canPartition(self, nums: List[int]) -> bool:
+        if sum(nums) % 2 != 0:
+            return False
+        target = sum(nums) // 2
+        result_set = {0}
+        for num in nums:
+            iter_set = result_set.copy()
+            for s in iter_set:
+                if num + s == target:
+                    return True
+                result_set.add(s + num)
+        return False
+
+
+a = Solution2()
 print(a.canPartition(
     [15, 56, 4, 1, 7, 80, 88, 22, 35, 69, 23, 24, 73, 14, 14, 3, 2, 5, 60, 95, 68, 55, 81, 96, 71, 51, 93, 5, 53, 37,
      29, 64, 58, 1, 83, 67, 26, 53, 3, 44, 35, 2, 43, 37, 18, 30, 61, 55, 40, 81, 35, 3, 2, 23, 86, 3, 73, 93, 73, 30,
