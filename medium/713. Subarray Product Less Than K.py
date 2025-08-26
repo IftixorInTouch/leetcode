@@ -23,3 +23,24 @@ class Solution:
                         pos_nums.append((idx, num * t[1]))
 
         return result
+
+
+class Solution2:
+    def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        left = 0
+        result = 0
+        cur_product = 1
+        for right in range(len(nums)):
+            cur_product *= nums[right]
+
+            while cur_product >= k and left <= right:
+                cur_product //= nums[left]
+                left += 1
+
+            result += right - left + 1
+
+        return result
+
+
+a = Solution2()
+print(a.numSubarrayProductLessThanK([1, 2, 3, 4], 2))
